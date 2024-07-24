@@ -7,16 +7,21 @@
     <title>{{env('APP_NAME')}}</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body>
-    <header>
+<body class="bg-slate-100 text-slate-900">
+    <header class="bg-slate-800 shadow-lg">
         <nav>
-            <h1 class="text-4xl">Welcome to Laravel</h1>
             
+            <a href="{{route('home')}}" class="nav-link">Home</a>
+            <div class="flex items-center gap-4"> 
+                <a href="{{route('login')}}" class="nav-link">Login</a>
+                <a href="{{route('register')}}" class="nav-link">Register</a>
+            </div>
         </nav>
 
     </header>
-    <main>
-        @yield('main')
+    <main class="py-8 px-4 mx-auto max-w-screen-lg">
+        {{$slot}}
+        {{-- @yield('main') --}}
     </main>
 
 
